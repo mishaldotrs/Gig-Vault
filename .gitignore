@@ -1,0 +1,13 @@
+# os / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# stellar cli local state at repo root
+.stellar/
+
+# logs
+*.log
