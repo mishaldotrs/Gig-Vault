@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* GigVault — Stellar palette: white canvas, black ink, gold accent */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
+
+    --surface: 0 0% 97%;
+    --surface-raised: 0 0% 93%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    --border: 0 0% 89%;
+    --input: 0 0% 85%;
+    --ring: 45 95% 48%;
+
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 42%;
+
+    /* Stellar gold — CTAs, accents, active milestone seals */
+    --primary: 45 95% 48%;
+    --primary-foreground: 0 0% 8%;
+
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 8%;
+
+    --accent: 45 95% 48%;
+    --accent-foreground: 0 0% 8%;
+
+    /* Stellar black — solid CTAs, completed seals */
+    --vault: 0 0% 10%;
+    --vault-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: radial-gradient(
+      ellipse 70% 40% at 50% -5%,
+      hsl(45 95% 48% / 0.07),
+      transparent
+    );
+  }
+}
+
+@layer utilities {
+  .font-tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Vault seal / rail — the signature milestone visual */
+.vault-rail {
+  background: repeating-linear-gradient(
+    90deg,
+    hsl(var(--border)) 0px,
+    hsl(var(--border)) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
