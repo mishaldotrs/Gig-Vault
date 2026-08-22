@@ -1,0 +1,13 @@
+# rust build artifacts (wasm + native)
+target/
+
+# NOTE: Cargo.lock is intentionally COMMITTED for contracts —
+# it guarantees reproducible wasm builds across machines.
+
+# stellar cli local state (identities live in ~/.config/stellar, but
+# aliases/config written next to the workspace land here)
+.stellar/
+
+# editor / os cruft
+.DS_Store
+*.swp
