@@ -2,7 +2,11 @@
 
 **Find Talent, Fund Work.** A freelance marketplace built on Stellar/Soroban with **milestone escrow**, **dispute arbitration**, and **on-chain reputation scoring**. Clients fund work one milestone at a time; funds sit in the contract until the client approves the delivery — or, if the two sides disagree, until a designated arbitrator resolves it on-chain.
 
-🔗 **Live demo:** [gigvault-dapp.vercel.app](https://gigvault-dapp.vercel.app/) · **Network:** Stellar Testnet
+| | |
+|---|---|
+| 🔗 **Live link** | [gigvault-dapp.vercel.app](https://gigvault-dapp.vercel.app/) |
+| 📜 **Stellar smart contract (Testnet)** | [`CDHPJQSSRGWXBEZLGWEETBO4ONYHYD42PMRUA72GIRTLH3MHKNT6UCGP`](https://stellar.expert/explorer/testnet/contract/CDHPJQSSRGWXBEZLGWEETBO4ONYHYD42PMRUA72GIRTLH3MHKNT6UCGP) |
+| 👨‍💻 **Developed by** | [@mishaldotrs](https://x.com/mishaldotrs) |
 
 ## Overview
 
