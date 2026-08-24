@@ -231,10 +231,10 @@ export default function HomePage() {
                 Meet like-minded people and find escrow-backed work opportunities easily.
               </p>
               <div className="mt-6 flex items-center gap-4 text-muted-foreground">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground" aria-label="GitHub">
-                  <Github className="h-5 w-5" />
+                <a href="https://github.com/mishaldotrs/Gig-Vault" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground" aria-label="GitHub">
+                 <Github className="h-5 w-5" />
                 </a>
-                <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground" aria-label="X">
+                <a href="https://x.com/mishaldotrs" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-foreground" aria-label="X">
                   <XMark className="h-4 w-4" />
                 </a>
               </div>
@@ -260,7 +260,7 @@ export default function HomePage() {
           </div>
 
           <p className="mt-10 flex items-center justify-end gap-1 text-xs text-muted-foreground">
-            Made with <Heart className="h-3 w-3 fill-current" /> on Stellar
+            Made By <Heart className="h-3 w-3 fill-current" /> Mishal Turkane on Stellar
           </p>
         </div>
       </footer>
