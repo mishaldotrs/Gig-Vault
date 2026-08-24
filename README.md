@@ -6,7 +6,8 @@
 |---|---|
 | 🔗 **Live link** | [gigvault-dapp.vercel.app](https://gigvault-dapp.vercel.app/) |
 | 📜 **Stellar smart contract (Testnet)** | [`CDHPJQSSRGWXBEZLGWEETBO4ONYHYD42PMRUA72GIRTLH3MHKNT6UCGP`](https://stellar.expert/explorer/testnet/contract/CDHPJQSSRGWXBEZLGWEETBO4ONYHYD42PMRUA72GIRTLH3MHKNT6UCGP) |
-| 👨‍💻 **Developed by** | [@mishaldotrs](https://x.com/mishaldotrs) |
+| 👨‍💻 **Developed by** | [@mishaldotrs](https://x.com/mishaldotrs) | 
+| 👨‍💻 **Demo Intro Video** | [on @youtube](https://youtu.be/H5WxYxQPFZo?si=DBJk-27uC7QMZ00M) | 
 
 ## Overview
 
