@@ -7,7 +7,7 @@ export default function ActivityPage() {
       <div>
         <h1 className="font-display text-3xl font-semibold tracking-tight">Activity</h1>
         <p className="mt-1 text-muted-foreground">
-          A live stream of on-chain events, plus every transaction you've submitted this session.
+         A live stream of on-chain events, plus every transaction you&apos;ve submitted this session.
         </p>
       </div>
 

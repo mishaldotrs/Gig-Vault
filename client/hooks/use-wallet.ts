@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import { useWalletStore } from "@/lib/store/wallet-store";
 import { connectWallet, disconnectWallet, openWalletModal, signXdr } from "@/lib/wallet/kit";
 import { toGigVaultError } from "@/types/wallet";

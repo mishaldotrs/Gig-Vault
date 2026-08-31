@@ -11,7 +11,7 @@ export default function DashboardPage() {
     <div className="container space-y-6 py-10">
       <div>
         <h1 className="font-display text-3xl font-semibold tracking-tight">Dashboard</h1>
-        <p className="mt-1 text-muted-foreground">Your wallet, your on-chain reputation, and this session's transactions.</p>
+        <p className="mt-1 text-muted-foreground">Your wallet, your on-chain reputation, and this session&apos;s transactions.</p>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3">

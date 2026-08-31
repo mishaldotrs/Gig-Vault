@@ -13,7 +13,7 @@ export function TransactionHistory() {
     <Card>
       <CardHeader>
         <CardTitle>Transaction history</CardTitle>
-        <CardDescription>Every contract call you've submitted this session, tracked live.</CardDescription>
+        <CardDescription>Every contract call you&apos;ve submitted this session, tracked live.</CardDescription>
       </CardHeader>
       <CardContent>
         {transactions.length === 0 ? (

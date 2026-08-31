@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { VaultMark } from "@/components/layout/header";
 import {
-  ArrowRight,
   Lock,
   Scale,
   ShieldCheck,

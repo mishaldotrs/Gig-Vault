@@ -2,7 +2,6 @@ import {
   Account,
   Address,
   Contract,
-  Operation,
   TransactionBuilder,
   BASE_FEE,
   scValToNative,
@@ -76,7 +75,7 @@ export async function callWrite(
     const source = await server.getAccount(sourceAddress);
     const contract = new Contract(contractId);
 
-    let tx = new TransactionBuilder(source, {
+    const tx = new TransactionBuilder(source, {
       fee: BASE_FEE,
       networkPassphrase: NETWORK_PASSPHRASE,
     })

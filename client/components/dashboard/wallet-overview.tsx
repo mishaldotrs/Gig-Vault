@@ -55,7 +55,7 @@ export function WalletOverview() {
         {isLoading ? (
           <Skeleton className="h-16 w-full" />
         ) : isError ? (
-          <p className="text-sm text-destructive">Couldn't load balances. Try again shortly.</p>
+          <p className="text-sm text-destructive">Couldn&apos;t load balances. Try again shortly.</p>
         ) : data && data.balances.length > 0 ? (
           <div className="space-y-2">
             {data.balances.map((b) => (
@@ -67,7 +67,7 @@ export function WalletOverview() {
           </div>
         ) : (
           <div className="flex flex-col items-center gap-3 rounded-md border border-dashed border-border py-6 text-center">
-            <p className="text-sm text-muted-foreground">This testnet account isn't funded yet.</p>
+            <p className="text-sm text-muted-foreground">This testnet account isn&apos;t funded yet.</p>
             <a href={FRIENDBOT_FUND_URL(address ?? "")} target="_blank" rel="noreferrer">
               <Button variant="outline" size="sm" onClick={() => setTimeout(() => refetch(), 3000)}>
                 <Droplets className="h-3.5 w-3.5" />

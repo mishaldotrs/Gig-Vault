@@ -8,7 +8,7 @@ export default function NotFound() {
       <Lock className="h-10 w-10 text-muted-foreground" />
       <h1 className="font-display text-3xl font-semibold">This vault seal is empty</h1>
       <p className="max-w-sm text-muted-foreground">
-        The page you're looking for doesn't exist. It may have moved, or the link was mistyped.
+        The page you&apos;re looking for doesn&apos;t exist. It may have moved, or the link was mistyped.
       </p>
       <Link href="/">
         <Button variant="vault">Back to home</Button>

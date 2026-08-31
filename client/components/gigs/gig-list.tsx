@@ -99,7 +99,7 @@ function GigGrid({
       <Card>
         <CardContent className="flex flex-col items-center gap-2 py-14 text-center text-muted-foreground">
           <WifiOff className="h-8 w-8 opacity-40" />
-          <p className="text-sm">Couldn't reach the network. Check your connection and try again.</p>
+          <p className="text-sm">Couldn&apos;t reach the network. Check your connection and try again.</p>
         </CardContent>
       </Card>
     );
