@@ -1,6 +1,19 @@
 # GigVault
 
-[![CI](https://github.com/mishaldotrs/Gig-Vault/actions/workflows/ci.yml/badge.svg)](https://github.com/mishaldotrs/Gig-Vault/actions/workflows/ci.yml) [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://gigvault-dapp.vercel.app/) [![Stellar Testnet](https://img.shields.io/badge/Stellar-Testnet-FDDA24?logo=stellar&logoColor=black)](https://stellar.expert/explorer/testnet/contract/CDHPJQSSRGWXBEZLGWEETBO4ONYHYD42PMRUA72GIRTLH3MHKNT6UCGP)
+[![CI/CD Pipeline](https://img.shields.io/github/actions/workflow/status/mishaldotrs/Gig-Vault/ci.yml?branch=main&label=CI%2FCD%20Pipeline&logo=githubactions&logoColor=white)](https://github.com/mishaldotrs/Gig-Vault/actions/workflows/ci.yml)
+[![Stellar](https://img.shields.io/badge/Stellar-Soroban%20Smart%20Contracts-7B36D9?logo=stellar&logoColor=white)](https://stellar.expert/explorer/testnet/contract/CDHPJQSSRGWXBEZLGWEETBO4ONYHYD42PMRUA72GIRTLH3MHKNT6UCGP)
+[![Rust](https://img.shields.io/badge/Rust-soroban--sdk%2022-DEA584?logo=rust&logoColor=black)](contract/gigvault/src/lib.rs)
+[![Next.js](https://img.shields.io/badge/Next.js-15%20(App%20Router)-black?logo=nextdotjs&logoColor=white)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-v3-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Bun](https://img.shields.io/badge/Bun-runtime-FBF0DF?logo=bun&logoColor=black)](https://bun.sh)
+[![Stellar SDK](https://img.shields.io/badge/%40stellar%2Fstellar--sdk-14-FDDA24?logo=stellar&logoColor=black)](https://www.npmjs.com/package/@stellar/stellar-sdk)
+[![Wallets](https://img.shields.io/badge/StellarWalletsKit-Freighter%20%C2%B7%20xBull%20%C2%B7%20Albedo%20%2B%20more-6E56CF)](https://stellarwalletskit.dev)
+[![TanStack Query](https://img.shields.io/badge/TanStack%20Query-v5-FF4154?logo=reactquery&logoColor=white)](https://tanstack.com/query)
+[![Zustand](https://img.shields.io/badge/Zustand-state-443E38?logo=react&logoColor=white)](https://zustand.docs.pmnd.rs)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://gigvault-dapp.vercel.app/)
+[![License](https://img.shields.io/badge/License-MIT-97CA00)](LICENSE)
 
 **Find Talent, Fund Work.** A freelance marketplace built on Stellar/Soroban with **milestone escrow**, **dispute arbitration**, and **on-chain reputation scoring**. Clients fund work one milestone at a time; funds sit in the contract until the client approves the delivery — or, if the two sides disagree, until a designated arbitrator resolves it on-chain.
 
