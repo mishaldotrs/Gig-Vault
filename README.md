@@ -1,5 +1,7 @@
 # GigVault
 
+[![CI](https://github.com/mishaldotrs/Gig-Vault/actions/workflows/ci.yml/badge.svg)](https://github.com/mishaldotrs/Gig-Vault/actions/workflows/ci.yml) [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://gigvault-dapp.vercel.app/) [![Stellar Testnet](https://img.shields.io/badge/Stellar-Testnet-FDDA24?logo=stellar&logoColor=black)](https://stellar.expert/explorer/testnet/contract/CDHPJQSSRGWXBEZLGWEETBO4ONYHYD42PMRUA72GIRTLH3MHKNT6UCGP)
+
 **Find Talent, Fund Work.** A freelance marketplace built on Stellar/Soroban with **milestone escrow**, **dispute arbitration**, and **on-chain reputation scoring**. Clients fund work one milestone at a time; funds sit in the contract until the client approves the delivery — or, if the two sides disagree, until a designated arbitrator resolves it on-chain.
 
 | | |
@@ -139,6 +141,19 @@ Visit `http://localhost:3000`. Connect a funded testnet wallet, post a gig from 
 4. Deploy. The contract lives on Stellar Testnet independently of the frontend host — redeploying the frontend never requires redeploying the contract.
 
 > Note: attachments + chat use a local file store in development. On serverless hosts they won't persist between invocations — swap `client/lib/server/gig-store.ts` for a database (e.g. Neon/Postgres) for production use.
+
+## CI/CD
+
+Every push and pull request to `main` runs the GitHub Actions pipeline defined in [`.github/workflows/ci.yml`](.github/workflows/ci.yml):
+
+| Job | Steps |
+|---|---|
+| **Frontend** | `bun install --frozen-lockfile` → `bun run lint` (ESLint) → `bun run typecheck` (tsc) → `bun run build` (Next.js production build) |
+| **Contract** | Rust stable toolchain + cargo cache → `cargo test` (all 6 Soroban contract tests) |
+
+Nothing lands on `main` broken — a lint error, type error, failed build, or failing contract test turns the pipeline red.
+
+**Continuous deployment** is handled by Vercel's Git integration: every push to `main` that passes CI is automatically built and deployed to [gigvault-dapp.vercel.app](https://gigvault-dapp.vercel.app/). The smart contract deploys separately (and far less often) via `scripts/deploy.sh` — frontend deploys never touch the chain.
 
 ## Smart contract design
 
