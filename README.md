@@ -11,6 +11,8 @@
 | 👨‍💻 **Developed by** | [@mishaldotrs](https://x.com/mishaldotrs) | 
 | 👨‍💻 **Demo Intro Video** | [on @youtube](https://youtu.be/H5WxYxQPFZo?si=DBJk-27uC7QMZ00M) | 
 
+![GigVault — Find Talent, Fund Work](client/public/screenshot.png)
+
 ## Overview
 
 GigVault replaces "trust the platform" freelance escrow with "trust the contract." Every gig is a sequence of milestones, each with its own escrow lifecycle:
@@ -30,6 +32,25 @@ Gig itself:  Open → InProgress → Completed
 
 A freelancer's reputation is not a database row you could fake — it's a score the contract itself updates every time a milestone is released or a dispute is lost.
 
+### The three roles
+
+| Role | What they do | What the contract enforces |
+|---|---|---|
+| **Client** | Posts gigs, funds milestones, approves deliveries, can raise disputes, can delete their still-open gigs | Only the client can fund/approve their gig's milestones; deleting is blocked once a freelancer accepts |
+| **Freelancer** | Accepts gigs, submits deliveries, can fix & resubmit disputed work, can walk away (escrow auto-refunds) | Only the assigned freelancer can submit; walking away is blocked mid-dispute |
+| **Arbitrator** | Resolves disputes when the parties can't settle | A fixed address set at initialization — nobody else can resolve a dispute |
+
+### Reputation scoring
+
+| Event | Score change |
+|---|---|
+| Starting score (new address) | **500 / 1000** — neutral |
+| Milestone completed & approved | **+25** |
+| Dispute won (arbitrator sided with freelancer) | **+10** |
+| Dispute lost | **−40** |
+
+Reaching the maximum 1000 takes 20 completed milestones — reputation is earned slowly and lost quickly, like the real thing. The score is tagged with the skill the freelancer last worked in and computed entirely inside the contract on every release/resolution.
+
 ## Features
 
 - **Milestone escrow** — clients fund milestones individually; a freelancer only sees funds move once the client (or an arbitrator) says so.
@@ -42,6 +63,29 @@ A freelancer's reputation is not a database row you could fake — it's a score 
 - **Multi-wallet support** — connect with any wallet supported by StellarWalletsKit (Freighter, xBull, Albedo, Hana, Lobstr, WalletConnect, and more) through a single modal.
 - **Real-time activity** — a live event feed polls the chain directly for contract events (no backend/indexer required) and a per-session transaction tracker shows pending → success/failed status with explorer links.
 - **Friendly error handling** — wallet errors and all 14 contract error codes are translated into plain-language messages, never raw RPC dumps.
+
+## Architecture
+
+GigVault draws a hard line between what must be trustless and what's just convenience:
+
+| Concern | Where it lives | Why |
+|---|---|---|
+| Escrowed funds, milestone state, gig lifecycle | **On-chain** (Soroban contract, persistent storage per gig) | Money and state transitions must be verifiable and unstoppable |
+| Reputation scores | **On-chain** (persistent storage per address) | A reputation you can fake is worthless |
+| Global config (admin, arbitrator, token, gig counter) | **On-chain** (instance storage) | Small, fixed-size, loaded with every call |
+| Attachments (images, repo links) & per-gig chat | **Off-chain** (Next.js API routes + file store, namespaced by contract ID) | Large/mutable content doesn't belong in contract storage; swap for a DB without touching the chain |
+
+The frontend talks to the chain two ways: **reads** are free simulations against Soroban RPC (no wallet needed — the gig list works before you even connect), and **writes** build a transaction, simulate it, get it signed by the connected wallet, submit it, and poll until it lands.
+
+## Try the full flow (2 wallets)
+
+1. Open the [live app](https://gigvault-dapp.vercel.app/) in two browser profiles with two funded testnet wallets ([Friendbot](https://friendbot.stellar.org) funds them free).
+2. **Wallet A (client):** Post a gig — title, skill, milestones, optionally attach an image or GitHub repo.
+3. **Wallet B (freelancer):** Accept the gig from the Marketplace's *Open* tab.
+4. **Wallet A:** Fund milestone 1 — XLM moves into the contract (check the tx on stellar.expert).
+5. **Wallet B:** Submit delivery. Try the per-gig **chat** while you're at it.
+6. **Wallet A:** Approve & release — the freelancer is paid instantly and their reputation ticks up +25.
+7. For the dark path: raise a dispute instead of approving, watch the milestone freeze, then **fix & resubmit** from Wallet B.
 
 ## Tech stack
 

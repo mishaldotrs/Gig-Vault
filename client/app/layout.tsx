@@ -8,10 +8,36 @@ const sans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
+const SITE_URL = "https://gigvault-dapp.vercel.app";
+const DESCRIPTION =
+  "Find Talent, Fund Work — a freelance marketplace on Stellar with milestone escrow, dispute arbitration, and on-chain reputation. No middleman, just code.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "GigVault — Freelance escrow on Stellar",
-  description:
-    "A freelance marketplace with milestone escrow, dispute arbitration, and skill-based reputation, built on Soroban.",
+  description: DESCRIPTION,
+  openGraph: {
+    title: "GigVault — Find Talent, Fund Work",
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: "GigVault",
+    type: "website",
+    images: [
+      {
+        url: "/screenshot.png",
+        width: 1342,
+        height: 643,
+        alt: "GigVault — Find Talent, Fund Work. Freelance escrow on Stellar.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GigVault — Find Talent, Fund Work",
+    description: DESCRIPTION,
+    images: ["/screenshot.png"],
+    creator: "@mishaldotrs",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
