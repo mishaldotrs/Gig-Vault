@@ -7,7 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  build-and-lint:
+  frontend:
+    name: Frontend — lint, typecheck, build
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -28,5 +29,30 @@ jobs:
       - name: Lint
         run: bun run lint
 
+      - name: Typecheck
+        run: bun run typecheck
+
       - name: Build
         run: bun run build
+
+  contract:
+    name: Contract — cargo tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: contract
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache cargo
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: contract
+
+      - name: Run contract tests
+        run: cargo test
